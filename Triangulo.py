@@ -1,31 +1,12 @@
-# ENTRADAS:
-A, B, C = input().split(" ")
-A: float = float(A)
-B: float = float(B)
-C: float = float(C)
-maior: float
-soma: float
-true: bool
-# PROCESSAMENTO:
-if(A > B) and (A > C):
-    maior = A
-elif B > C:
-    maior = B
+A, B, C, D = input().split(" ")
+A, B, C, D = int(A), int(B), int(C), int(D)
+if(A > abs(B - C)) and (A < (B + C)) or (A > abs(B - D)) and (A < (B + D)) or (A > abs(C - D)) and (A < (C + D)):
+    print("S")
+elif(B > abs(A - C)) and (B < (A + C)) or (B > abs(A - D)) and (B < (A + D)) or (B > abs(C - D)) and (B < (C + D)):
+    print("S")
+elif(C > abs(A - B)) and (C < (A + B)) or (C > abs(B - D)) and (C < (B + D)) or (C > abs(A - D)) and (C < (A + D)):
+    print("S")
+elif(D > abs(A - B)) and (D < (A + B)) or (D > abs(A - C)) and (D < (A + C)) or (D > abs(B - C)) and (D < (B + C)):
+    print("S")
 else:
-    maior = C
-if maior == A:
-    soma = B + C
-elif maior == B:
-    soma = A + C
-else:
-    soma = A + B
-if soma > maior:
-    true = True
-else:
-    true = False
-if true:
-    perimetro: float = A + B +C
-    print("Perimetro = %.1f" % perimetro)
-else:
-    area: float = ((A + B) * C) / 2
-    print("Area = %.1f" % area)
+    print("N")
